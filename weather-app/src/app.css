@@ -1,0 +1,6 @@
+.mainDiv{
+    width: 100%;
+    border-radius: 10px;
+    background-image: url(./assets/bg-weather.PNG);
+    background-size: cover;
+}

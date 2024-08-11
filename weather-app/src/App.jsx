@@ -1,5 +1,6 @@
 import axios from "axios" 
 import { useState } from "react"
+import './app.css'
  
 function App() {
 
@@ -34,14 +35,9 @@ function App() {
       <div style={styles.container}>
       <div style={styles.formDiv}>
 
-<div style={{backgroundImage: 'URL(./bg-weather.png)',
-backgroundSize:'cover',
-backgroundRepeat: 'no-repeat',
-width: '100%',
-borderRadius: '10px',
-marginTop: '-4.5%',
-marginLeft: '0.2px'
-}}>
+<div className="mainDiv" style={{backgroundRepeat:'no-repeat'}}>
+
+
   
         <h1 style={styles.heading}>Weather Application</h1>
         <form onSubmit={handleSubmit} style={styles.form}>
@@ -54,7 +50,7 @@ marginLeft: '0.2px'
           <h2 style={styles.name}>{weather.name}</h2>
           <p style={styles.ph}>{Math.floor(weather.main.temp-273.15)} °C</p>
           <p style={styles.ph}>{weather.weather[0].description}</p>
-          <img src={`https:/openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Weather icon" />
+          <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Weather icon" />
           </div>
           }
       
@@ -106,11 +102,11 @@ const styles={
   },
 
   heading:{
-  paddingTop: '20px',
     color: 'Green'
   },
 
   formDiv:{
+    display: 'flex',
     width: '35%',
     textAlign: 'center',
     borderRadius: '10px',
@@ -124,7 +120,7 @@ const styles={
 
   ph:{
     fontSize: '20px',
-  }
+  },
 
 }
 
